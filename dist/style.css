@@ -5,6 +5,63 @@
   outline: 0;
   background: none; }
 
+.rvt-main-container > * {
+  box-sizing: border-box; }
+
+.rvt-main-container .rvt-icon-spin {
+  animation: spin infinite 1s linear; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
+.rvt-dragger {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: blueviolet;
+  cursor: col-resize; }
+  .rvt-dragger::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 0;
+    bottom: 0; }
+  .rvt-dragger:hover {
+    background: #333; }
+
+.rvt-drag-current {
+  background: #038c7f; }
+
+.rvt-dragger-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  cursor: grab;
+  border-radius: 0.3em;
+  border: 2px solid rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 19, 127, 0.5); }
+  .rvt-dragger-container::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 0;
+    bottom: 0; }
+  .rvt-dragger-container:hover {
+    background: #333; }
+
+.btn-reset, .rvt-controller-item,
+.rvt-file-picker-control, .rvt-controller-dropdown .rvt-controller-list a {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none; }
+
 .rvt-controls-cont {
   margin-top: 10px;
   text-align: center; }
@@ -82,82 +139,11 @@
   width: 100%;
   height: 100%; }
 
-.btn-reset, .rvt-controller-item,
-.rvt-file-picker-control, .rvt-controller-dropdown .rvt-controller-list a {
-  padding: 0;
-  border: 0;
-  outline: 0;
-  background: none; }
-
-.rvt-main-container > * {
-  box-sizing: border-box; }
-
-.rvt-main-container .rvt-icon-spin {
-  animation: spin infinite 1s linear; }
-
-@keyframes spin {
-  from {
-    transform: rotate(0); }
-  to {
-    transform: rotate(360deg); } }
-
 .rvt-icon {
   width: 1em;
   height: 1em;
   fill: #038c7f;
   vertical-align: middle; }
-
-.rvt-file-picker {
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-  border: 1px solid #038c7f;
-  background-color: #ccfdf856;
-  cursor: pointer;
-  color: #038c7f; }
-  .rvt-file-picker input {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    left: 0; }
-
-.rvt-dragger {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background: blueviolet;
-  cursor: col-resize; }
-  .rvt-dragger::after {
-    content: "";
-    position: absolute;
-    left: -2px;
-    right: -2px;
-    top: 0;
-    bottom: 0; }
-  .rvt-dragger:hover {
-    background: #333; }
-
-.rvt-drag-current {
-  background: #038c7f; }
-
-.rvt-dragger-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  cursor: grab;
-  border-radius: 0.3em;
-  border: 2px solid rgba(0, 0, 0, 0.9);
-  background-color: rgba(0, 19, 127, 0.5); }
-  .rvt-dragger-container::after {
-    content: "";
-    position: absolute;
-    left: -2px;
-    right: -2px;
-    top: 0;
-    bottom: 0; }
-  .rvt-dragger-container:hover {
-    background: #333; }
 
 .rvt-player-cont {
   position: relative; }
@@ -169,15 +155,15 @@
       font-size: 14px;
       padding: 5px; }
 
-.rvt-status {
+.rvt-file-picker {
   width: 100%;
   text-align: center;
   padding: 50px;
+  border: 1px solid #038c7f;
   background-color: #ccfdf856;
   cursor: pointer;
-  font-size: 20px;
   color: #038c7f; }
-  .rvt-status input {
+  .rvt-file-picker input {
     visibility: hidden;
     position: absolute;
     right: 0;
@@ -226,3 +212,17 @@
     bottom: -9px;
     left: 50%;
     margin-left: -5px; }
+
+.rvt-status {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  background-color: #ccfdf856;
+  cursor: pointer;
+  font-size: 20px;
+  color: #038c7f; }
+  .rvt-status input {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0; }
