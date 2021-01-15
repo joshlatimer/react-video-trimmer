@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import Dragger from "./Dragger";
+import DraggerContainer from "./DraggerContainer";
 import { noop, formatSeconds, leftZero } from "../libs/utils";
 
 const TrimmerOverLay = props => {
