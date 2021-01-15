@@ -17,6 +17,43 @@
   to {
     transform: rotate(360deg); } }
 
+.rvt-dragger {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: blueviolet;
+  cursor: col-resize;
+  z-index: 5555; }
+  .rvt-dragger::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 0;
+    bottom: 0; }
+  .rvt-dragger:hover {
+    background: #333; }
+
+.rvt-drag-current {
+  background: #038c7f; }
+
+.rvt-dragger-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  cursor: grab;
+  border-radius: 0.3em;
+  border: 2px solid rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 19, 127, 0.5); }
+  .rvt-dragger-container::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 0;
+    bottom: 0; }
+
 .btn-reset, .rvt-controller-item,
 .rvt-file-picker-control, .rvt-controller-dropdown .rvt-controller-list a {
   padding: 0;
@@ -121,48 +158,24 @@
   width: 50%;
   background-color: orange; }
 
-.rvt-icon {
-  width: 1.5em;
-  height: 1.5em;
-  fill: white;
-  vertical-align: middle; }
+.rvt-player-cont {
+  position: relative; }
+  .rvt-player-cont .rvt-player-time-range-cont {
+    margin: 5px;
+    text-align: center; }
+    .rvt-player-cont .rvt-player-time-range-cont .rvt-player-time-range {
+      color: #8f8f8f;
+      font-size: 14px;
+      padding: 5px; }
 
-.rvt-dragger {
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; }
+
+.react-player {
   position: absolute;
   top: 0;
-  bottom: 0;
-  width: 5px;
-  background: blueviolet;
-  cursor: col-resize;
-  z-index: 5555; }
-  .rvt-dragger::after {
-    content: "";
-    position: absolute;
-    left: -2px;
-    right: -2px;
-    top: 0;
-    bottom: 0; }
-  .rvt-dragger:hover {
-    background: #333; }
-
-.rvt-drag-current {
-  background: #038c7f; }
-
-.rvt-dragger-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  cursor: grab;
-  border-radius: 0.3em;
-  border: 2px solid rgba(0, 0, 0, 0.9);
-  background-color: rgba(0, 19, 127, 0.5); }
-  .rvt-dragger-container::after {
-    content: "";
-    position: absolute;
-    left: -2px;
-    right: -2px;
-    top: 0;
-    bottom: 0; }
+  left: 0; }
 
 .rvt-file-picker {
   width: 100%;
@@ -178,15 +191,11 @@
     right: 0;
     left: 0; }
 
-.rvt-player-cont {
-  position: relative; }
-  .rvt-player-cont .rvt-player-time-range-cont {
-    margin: 5px;
-    text-align: center; }
-    .rvt-player-cont .rvt-player-time-range-cont .rvt-player-time-range {
-      color: #8f8f8f;
-      font-size: 14px;
-      padding: 5px; }
+.rvt-icon {
+  width: 1.5em;
+  height: 1.5em;
+  fill: white;
+  vertical-align: middle; }
 
 .rvt-status {
   width: 100%;

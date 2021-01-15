@@ -54,21 +54,21 @@ class Player extends React.Component {
     return (
       <div className="rvt-player-cont" onContextMenu={() => {}}>
         {/* <video src={props.src} controls={false} /> */}
-        <ReactPlayer
-          onPlay={this.handleOnPause}
-          onPlay={this.handleOnPlay}
-          onProgress={this.handlePlayerProgress}
-          url={this.props.src}
-          ref={el => (this.player = el)}
-          playing={this.state.playing}
-          style={{
-            margin: "0 auto",
-            position: "relative"
-          }}
-        >
-          {this.props.children}
 
-        </ReactPlayer>
+        <div className="player-wrapper">
+          <ReactPlayer
+            onPlay={this.handleOnPause}
+            onPlay={this.handleOnPlay}
+            onProgress={this.handlePlayerProgress}
+            url={this.props.src}
+            ref={el => (this.player = el)}
+            playing={this.state.playing}
+            className='react-player'
+            width='100%'
+            height='100%'
+          ></ReactPlayer>
+          {this.props.children}
+        </div>
         
 
         <div className="rvt-player-time-range-cont">

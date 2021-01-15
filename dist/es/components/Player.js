@@ -116,14 +116,13 @@ function (_React$Component) {
       return React.createElement("div", {
         className: "rvt-player-cont",
         onContextMenu: function onContextMenu() {}
+      }, React.createElement("div", {
+        className: "player-wrapper"
       }, React.createElement(ReactPlayer, (_React$createElement = {
         onPlay: this.handleOnPause
       }, _defineProperty(_React$createElement, "onPlay", this.handleOnPlay), _defineProperty(_React$createElement, "onProgress", this.handlePlayerProgress), _defineProperty(_React$createElement, "url", this.props.src), _defineProperty(_React$createElement, "ref", function ref(el) {
         return _this2.player = el;
-      }), _defineProperty(_React$createElement, "playing", this.state.playing), _defineProperty(_React$createElement, "style", {
-        margin: "0 auto",
-        position: "relative"
-      }), _React$createElement), this.props.children), React.createElement("div", {
+      }), _defineProperty(_React$createElement, "playing", this.state.playing), _defineProperty(_React$createElement, "className", "react-player"), _defineProperty(_React$createElement, "width", "100%"), _defineProperty(_React$createElement, "height", "100%"), _React$createElement)), this.props.children), React.createElement("div", {
         className: "rvt-player-time-range-cont"
       }, React.createElement("span", {
         className: "rvt-player-time-range"
