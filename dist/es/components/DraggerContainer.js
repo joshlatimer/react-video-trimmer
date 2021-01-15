@@ -59,6 +59,8 @@ function (_PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleMouseMove", function (e) {
+      console.log("handleMouseMove", handleMouseMove);
+
       _this.props.onDrag({
         x: e.screenX - _this._screenX + _this._ox,
         y: e.screenY - _this._screenY + _this._oy

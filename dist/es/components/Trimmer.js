@@ -203,7 +203,7 @@ function (_PureComponent) {
       }, React.createElement(TimeStamp, {
         time: this.props.endTime
       })), React.createElement(DraggerContainer, {
-        x: end,
+        x: start,
         width: end - start,
         onDrag: this.handleDragEnd,
         onDragStop: this.handleDragStop
