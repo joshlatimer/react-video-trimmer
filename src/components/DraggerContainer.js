@@ -21,6 +21,7 @@ export default class DraggerContainer extends PureComponent {
   };
 
   handleMouseMove = e => {
+    console.log("handleMouseMove", handleMouseMove);
     this.props.onDrag({
       x: e.screenX - this._screenX + this._ox,
       y: e.screenY - this._screenY + this._oy
