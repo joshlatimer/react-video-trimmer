@@ -93,6 +93,9 @@ class ReactVideoTrimmer extends React.PureComponent {
   decodeVideoFile = (file, doneCB = noop) => {
     this.setState({ decoding: true });
     const webVideo = this.webVideo;
+	
+	console.log("decodingVideoFile  ", file);
+	
     webVideo.videoFile = file;
     webVideo
       .decode(file)

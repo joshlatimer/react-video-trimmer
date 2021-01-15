@@ -49,6 +49,9 @@ class WebVideo extends EventEmitter {
   _videoBuffer = {};
 
   readAsArrayBuffer = async () => {
+	  
+	
+	console.log("readAsArrayBuffer  ", this._videoFile);
     this._videoBuffer = await readArrayBuffer(this._videoFile);
     return this.videoBuffer;
   };
@@ -104,6 +107,7 @@ class WebVideo extends EventEmitter {
   decode = async file => {
     this.videoFile = file;
     this.emit("processingFile");
+	console.log("processing  ", file);
     // Read File As ArrayBuffer
     const arrayBuffer = await this.readAsArrayBuffer();
     // convert to dataURL
