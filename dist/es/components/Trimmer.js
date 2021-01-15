@@ -196,12 +196,17 @@ function (_PureComponent) {
         noMicroSeconds: true,
         time: this.props.currentTime
       })), React.createElement(Dragger, {
-        x: end,
+        x: start,
         onDrag: this.handleDragEnd,
         onDragStop: this.handleDragStop
       }, React.createElement(TimeStamp, {
         time: this.props.endTime
-      })), React.createElement(TrimmerOverLay, {
+      })), React.createElement(DraggerContainer, {
+        x: end,
+        width: end - start,
+        onDrag: this.handleDragEnd,
+        onDragStop: this.handleDragStop
+      }), React.createElement(TrimmerOverLay, {
         right: 0,
         width: this.getTrimmerWidth(end)
       }));
