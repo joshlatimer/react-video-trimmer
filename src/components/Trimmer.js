@@ -155,7 +155,7 @@ class Trimmer extends PureComponent {
         <DraggerContainer
           x={start}
           width={(end - start)}
-          onDrag={this.handleDragEnd}
+          onDrag={this.handleDragStart}
           onDragStop={this.handleDragStop}
         >
         </DraggerContainer>

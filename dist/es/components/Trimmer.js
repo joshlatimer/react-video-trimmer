@@ -205,7 +205,7 @@ function (_PureComponent) {
       })), React.createElement(DraggerContainer, {
         x: start,
         width: end - start,
-        onDrag: this.handleDragEnd,
+        onDrag: this.handleDragStart,
         onDragStop: this.handleDragStop
       }), React.createElement(TrimmerOverLay, {
         right: 0,
