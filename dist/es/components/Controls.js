@@ -22,6 +22,11 @@ var Controls = function Controls(_ref) {
       left: "".concat(frameCurrentX, "%"),
       width: "".concat(frameCurrentWidth, "%")
     }
+  }), React.createElement("div", {
+    className: "videoSelectedTimeFrameContainerCurrentPlayed",
+    style: {
+      left: "".concat(frameCurrentPlayedX, "%")
+    }
   })), React.createElement("div", null, React.createElement("a", {
     className: "rvt-controller-item",
     title: "Pause",

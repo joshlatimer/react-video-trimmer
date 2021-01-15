@@ -17,20 +17,6 @@
   to {
     transform: rotate(360deg); } }
 
-.rvt-file-picker {
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-  border: 1px solid #038c7f;
-  background-color: #ccfdf856;
-  cursor: pointer;
-  color: #038c7f; }
-  .rvt-file-picker input {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    left: 0; }
-
 .btn-reset, .rvt-controller-item,
 .rvt-file-picker-control, .rvt-controller-dropdown .rvt-controller-list a {
   padding: 0;
@@ -43,10 +29,10 @@
   text-align: left;
   position: absolute;
   bottom: 5px;
-  left: 5px;
+  left: 0px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2); }
-  .rvt-controls-cont pos .seconds {
+  .rvt-controls-cont .seconds {
     font-size: 12px;
     line-height: 36px;
     margin-left: 10px;
@@ -79,6 +65,10 @@
   .rvt-controller-item .rvt-icon,
   .rvt-file-picker-control .rvt-icon {
     display: block; }
+
+.rvt-controller-item::hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0.5em; }
 
 .rvt-controller-dropdown {
   display: inline-block;
@@ -135,44 +125,15 @@
   width: 50%;
   background-color: orange; }
 
-.rvt-icon {
-  width: 1.5em;
-  height: 1.5em;
-  fill: white;
-  vertical-align: middle; }
-
-.rvt-player-cont {
-  position: relative; }
-  .rvt-player-cont .rvt-player-time-range-cont {
-    margin: 5px;
-    text-align: center; }
-    .rvt-player-cont .rvt-player-time-range-cont .rvt-player-time-range {
-      color: #8f8f8f;
-      font-size: 14px;
-      padding: 5px; }
-
-.player-wrapper {
-  position: relative;
-  padding-top: 56.25%; }
-
-.react-player {
+.videoSelectedTimeFrameContainerCurrentPlayed {
   position: absolute;
-  top: 0;
-  left: 0; }
-
-.rvt-status {
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-  background-color: #ccfdf856;
-  cursor: pointer;
-  font-size: 20px;
-  color: #038c7f; }
-  .rvt-status input {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    left: 0; }
+  left: 0px;
+  top: 0px;
+  transform: translateX(-50%) translateY(-50%);
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  border-radius: 1000px; }
 
 .rvt-dragger {
   position: absolute;
@@ -210,6 +171,45 @@
     right: -2px;
     top: 0;
     bottom: 0; }
+
+.rvt-player-cont {
+  position: relative; }
+  .rvt-player-cont .rvt-player-time-range-cont {
+    margin: 5px;
+    text-align: center; }
+    .rvt-player-cont .rvt-player-time-range-cont .rvt-player-time-range {
+      color: #8f8f8f;
+      font-size: 14px;
+      padding: 5px; }
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; }
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.rvt-file-picker {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  border: 1px solid #038c7f;
+  background-color: #ccfdf856;
+  cursor: pointer;
+  color: #038c7f; }
+  .rvt-file-picker input {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0; }
+
+.rvt-icon {
+  width: 1.5em;
+  height: 1.5em;
+  fill: white;
+  vertical-align: middle; }
 
 .rvt-trimmer-cont {
   display: block;
@@ -254,3 +254,17 @@
     bottom: -9px;
     left: 50%;
     margin-left: -5px; }
+
+.rvt-status {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  background-color: #ccfdf856;
+  cursor: pointer;
+  font-size: 20px;
+  color: #038c7f; }
+  .rvt-status input {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0; }

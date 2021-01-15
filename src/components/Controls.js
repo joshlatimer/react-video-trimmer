@@ -21,6 +21,10 @@ const Controls = ({
             left: `${frameCurrentX}%`,
             width: `${frameCurrentWidth}%`
           }}></div>
+
+          <div className="videoSelectedTimeFrameContainerCurrentPlayed" style={{
+            left: `${frameCurrentPlayedX}%`,
+          }}></div>
       </div>
 
 

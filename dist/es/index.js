@@ -261,7 +261,8 @@ function (_React$PureComponent) {
         playing: _this.state.playVideo,
         vidDuration: _this.webVideo.videoData.duration,
         frameCurrentX: _this.state.timeRange.start / _this.webVideo.videoData.duration * 100,
-        frameCurrentWidth: (_this.state.timeRange.end - _this.state.timeRange.start) / _this.webVideo.videoData.duration * 100
+        frameCurrentWidth: (_this.state.timeRange.end - _this.state.timeRange.start) / _this.webVideo.videoData.duration * 100,
+        frameCurrentPlayedX: _this.state.playedSeconds / _this.webVideo.videoData.duration * 100
       })), showTrimmer && React.createElement(Trimmer, {
         onPausePlayer: _this.handlePlayerPause,
         showTrimmer: _this.state.videoDataURL,
