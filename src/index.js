@@ -176,7 +176,7 @@ class ReactVideoTrimmer extends React.PureComponent {
                 playing={this.state.playVideo}
                 vidDuration={this.webVideo.videoData.duration}
                 frameCurrentX={(this.state.timeRange.start / this.webVideo.videoData.duration) * 100}
-                frameCurrentWidth={((this.state.timeRange.start + this.state.timeRange.end) / this.webVideo.videoData.duration) * 100}
+                frameCurrentWidth={((this.state.timeRange.end - this.state.timeRange.start) / this.webVideo.videoData.duration) * 100}
               />
             )}
           </Player>
