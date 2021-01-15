@@ -11,7 +11,8 @@ var Controls = function Controls(_ref) {
       canDownload = _ref.canDownload,
       onDownload = _ref.onDownload,
       frameCurrentX = _ref.frameCurrentX,
-      frameCurrentWidth = _ref.frameCurrentWidth;
+      frameCurrentWidth = _ref.frameCurrentWidth,
+      frameCurrentPlayedX = _ref.frameCurrentPlayedX;
   return React.createElement("div", {
     className: "rvt-controls-cont"
   }, React.createElement("div", {

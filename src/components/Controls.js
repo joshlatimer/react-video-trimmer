@@ -11,7 +11,8 @@ const Controls = ({
   canDownload,
   onDownload,
   frameCurrentX,
-  frameCurrentWidth
+  frameCurrentWidth,
+  frameCurrentPlayedX
 }) => {
   return (
     <div className="rvt-controls-cont">
