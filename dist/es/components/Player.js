@@ -122,7 +122,7 @@ function (_React$Component) {
         return _this2.player = el;
       }), _defineProperty(_React$createElement, "playing", this.state.playing), _defineProperty(_React$createElement, "style", {
         margin: "0 auto"
-      }), _React$createElement)), React.createElement("div", {
+      }), _React$createElement), this.props.children), React.createElement("div", {
         className: "rvt-player-time-range-cont"
       }, React.createElement("span", {
         className: "rvt-player-time-range"

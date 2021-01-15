@@ -7,7 +7,14 @@
 
 .rvt-controls-cont {
   margin-top: 10px;
-  text-align: center;
+  text-align: left;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  pos
   .seconds {
     font-size: 12px;
     line-height: 36px;

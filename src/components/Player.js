@@ -64,7 +64,12 @@ class Player extends React.Component {
           style={{
             margin: "0 auto"
           }}
-        />
+        >
+          {this.props.children}
+
+        </ReactPlayer>
+        
+
         <div className="rvt-player-time-range-cont">
           <span className="rvt-player-time-range">
             From: <strong>{this.displaySeconds(start)}</strong>
