@@ -141,6 +141,7 @@ function (_React$PureComponent) {
       });
 
       var webVideo = _this.webVideo;
+      console.log("decodingVideoFile  ", file);
       webVideo.videoFile = file;
       webVideo.decode(file).then(function (_ref) {
         var blob = _ref.blob,

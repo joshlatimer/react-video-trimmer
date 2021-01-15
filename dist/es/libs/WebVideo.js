@@ -82,14 +82,15 @@ function (_EventEmitter) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              console.log("readAsArrayBuffer  ", _this._videoFile);
+              _context.next = 3;
               return readArrayBuffer(_this._videoFile);
 
-            case 2:
+            case 3:
               _this._videoBuffer = _context.sent;
               return _context.abrupt("return", _this.videoBuffer);
 
-            case 4:
+            case 5:
             case "end":
               return _context.stop();
           }
@@ -163,40 +164,41 @@ function (_EventEmitter) {
               case 0:
                 _this.videoFile = file;
 
-                _this.emit("processingFile"); // Read File As ArrayBuffer
+                _this.emit("processingFile");
 
+                console.log("processing  ", file); // Read File As ArrayBuffer
 
-                _context3.next = 4;
+                _context3.next = 5;
                 return _this.readAsArrayBuffer();
 
-              case 4:
+              case 5:
                 arrayBuffer = _context3.sent;
-                _context3.next = 7;
+                _context3.next = 8;
                 return _this.readAsDataURL(arrayBuffer);
 
-              case 7:
+              case 8:
                 dataURL = _context3.sent;
                 videoObjectUrl = URL.createObjectURL(_this.videoFile);
                 video = document.createElement("video");
                 video.src = videoObjectUrl;
 
-              case 11:
+              case 12:
                 if (!((video.duration === Infinity || isNaN(video.duration)) && video.readyState < 2)) {
-                  _context3.next = 17;
+                  _context3.next = 18;
                   break;
                 }
 
-                _context3.next = 14;
+                _context3.next = 15;
                 return new Promise(function (r) {
                   return setTimeout(r, 1000);
                 });
 
-              case 14:
+              case 15:
                 video.currentTime = 10000000 * Math.random();
-                _context3.next = 11;
+                _context3.next = 12;
                 break;
 
-              case 17:
+              case 18:
                 _this._videoData = video;
 
                 _this.emit("processedFile");
@@ -207,7 +209,7 @@ function (_EventEmitter) {
                   blob: _this.convertBufferToBlob()
                 });
 
-              case 20:
+              case 21:
               case "end":
                 return _context3.stop();
             }
