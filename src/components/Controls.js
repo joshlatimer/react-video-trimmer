@@ -9,15 +9,17 @@ const Controls = ({
   onEncode,
   showEncodeBtn,
   canDownload,
-  onDownload
+  onDownload,
+  frameCurrentX,
+  frameCurrentWidth
 }) => {
   return (
     <div className="rvt-controls-cont">
 
       <div className="videoSelectedTimeFrameContainer">
         <div className="videoSelectedTimeFrameContainerCurrent" style={{
-            left: `${this.props.frameCurrentX}%`,
-            width: `${this.props.frameCurrentWidth}%`
+            left: `${frameCurrentX}%`,
+            width: `${frameCurrentWidth}%`
           }}></div>
       </div>
 

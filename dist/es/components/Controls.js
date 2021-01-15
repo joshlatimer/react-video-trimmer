@@ -1,5 +1,3 @@
-var _this = this;
-
 import React from "react";
 import Icon from "./Icon";
 
@@ -11,7 +9,9 @@ var Controls = function Controls(_ref) {
       onEncode = _ref.onEncode,
       showEncodeBtn = _ref.showEncodeBtn,
       canDownload = _ref.canDownload,
-      onDownload = _ref.onDownload;
+      onDownload = _ref.onDownload,
+      frameCurrentX = _ref.frameCurrentX,
+      frameCurrentWidth = _ref.frameCurrentWidth;
   return React.createElement("div", {
     className: "rvt-controls-cont"
   }, React.createElement("div", {
@@ -19,8 +19,8 @@ var Controls = function Controls(_ref) {
   }, React.createElement("div", {
     className: "videoSelectedTimeFrameContainerCurrent",
     style: {
-      left: "".concat(_this.props.frameCurrentX, "%"),
-      width: "".concat(_this.props.frameCurrentWidth, "%")
+      left: "".concat(frameCurrentX, "%"),
+      width: "".concat(frameCurrentWidth, "%")
     }
   })), React.createElement("div", null, React.createElement("a", {
     className: "rvt-controller-item",
