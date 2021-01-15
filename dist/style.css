@@ -5,12 +5,31 @@
   outline: 0;
   background: none; }
 
+.rvt-main-container > * {
+  box-sizing: border-box; }
+
+.rvt-main-container .rvt-icon-spin {
+  animation: spin infinite 1s linear; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
+.btn-reset, .rvt-controller-item,
+.rvt-file-picker-control, .rvt-controller-dropdown .rvt-controller-list a {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none; }
+
 .rvt-controls-cont {
   margin-top: 10px;
   text-align: left;
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  bottom: 5px;
+  left: 5px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2); }
   .rvt-controls-cont pos .seconds {
@@ -87,34 +106,20 @@
   width: 100%;
   height: 100%; }
 
-.btn-reset, .rvt-controller-item,
-.rvt-file-picker-control, .rvt-controller-dropdown .rvt-controller-list a {
-  padding: 0;
-  border: 0;
-  outline: 0;
-  background: none; }
+.videoSelectedTimeFrameContainer {
+  height: 5px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 5px;
+  background-color: rgba(70, 70, 70, 0.5); }
 
-.rvt-main-container > * {
-  box-sizing: border-box; }
-
-.rvt-main-container .rvt-icon-spin {
-  animation: spin infinite 1s linear; }
-
-@keyframes spin {
-  from {
-    transform: rotate(0); }
-  to {
-    transform: rotate(360deg); } }
-
-.rvt-player-cont {
-  position: relative; }
-  .rvt-player-cont .rvt-player-time-range-cont {
-    margin: 5px;
-    text-align: center; }
-    .rvt-player-cont .rvt-player-time-range-cont .rvt-player-time-range {
-      color: #8f8f8f;
-      font-size: 14px;
-      padding: 5px; }
+.videoSelectedTimeFrameContainerCurrent {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 50%;
+  background-color: orange; }
 
 .rvt-icon {
   width: 1.5em;
@@ -172,6 +177,16 @@
     position: absolute;
     right: 0;
     left: 0; }
+
+.rvt-player-cont {
+  position: relative; }
+  .rvt-player-cont .rvt-player-time-range-cont {
+    margin: 5px;
+    text-align: center; }
+    .rvt-player-cont .rvt-player-time-range-cont .rvt-player-time-range {
+      color: #8f8f8f;
+      font-size: 14px;
+      padding: 5px; }
 
 .rvt-status {
   width: 100%;

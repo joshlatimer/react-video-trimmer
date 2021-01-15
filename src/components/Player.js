@@ -62,7 +62,8 @@ class Player extends React.Component {
           ref={el => (this.player = el)}
           playing={this.state.playing}
           style={{
-            margin: "0 auto"
+            margin: "0 auto",
+            position: "relative"
           }}
         >
           {this.props.children}
@@ -80,6 +81,9 @@ class Player extends React.Component {
           <span className="rvt-player-time-range">
             Selected <strong>{this.displaySeconds(end - start)}</strong> of{" "}
             <strong>{this.displaySeconds(this.props.timeLimit)}</strong> allowed
+          </span>
+          <span className="rvt-player-time-range">
+            <strong>{this.displaySeconds(this.props.vidDuration)}</strong> vid length
           </span>
         </div>
       </div>

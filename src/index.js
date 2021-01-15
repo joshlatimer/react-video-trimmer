@@ -162,7 +162,24 @@ class ReactVideoTrimmer extends React.PureComponent {
             onPlayerPlay={this.handlePlayerPlay}
             onPlayerPause={this.handlePlayerPause}
             onPlayerProgress={this.handlePlayerProgress}
-          />
+            vidDuration={this.webVideo.videoData.duration}
+          >
+            {!decoding && !encoding && videoDataURL && (
+              <Controls
+                onDownload={() => this.handleDownloadVideo(this.state.encodedVideo)}
+                canDownload={encoded}
+                showEncodeBtn={this.props.showEncodeBtn}
+                onReselectFile={this.handleReselectFile}
+                onEncode={() => this.handleEncodeVideo(this.state.timeRange)}
+                onPlayPauseClick={this.handlePlayPauseVideo}
+                processing={encoding}
+                playing={this.state.playVideo}
+                vidDuration={this.webVideo.videoData.duration}
+                frameCurrentX={(this.state.timeRange.start / this.webVideo.videoData.duration) * 100}
+                frameCurrentWidth={((this.state.timeRange.start + this.state.timeRange.end) / this.webVideo.videoData.duration) * 100}
+              />
+            )}
+          </Player>
         )}
         {showTrimmer && (
           <Trimmer
@@ -177,18 +194,7 @@ class ReactVideoTrimmer extends React.PureComponent {
           />
         )}
 
-        {!decoding && !encoding && videoDataURL && (
-          <Controls
-            onDownload={() => this.handleDownloadVideo(this.state.encodedVideo)}
-            canDownload={encoded}
-            showEncodeBtn={this.props.showEncodeBtn}
-            onReselectFile={this.handleReselectFile}
-            onEncode={() => this.handleEncodeVideo(this.state.timeRange)}
-            onPlayPauseClick={this.handlePlayPauseVideo}
-            processing={encoding}
-            playing={this.state.playVideo}
-          />
-        )}
+        
       </>
     );
   };

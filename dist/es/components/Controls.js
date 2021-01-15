@@ -12,7 +12,15 @@ var Controls = function Controls(_ref) {
       onDownload = _ref.onDownload;
   return React.createElement("div", {
     className: "rvt-controls-cont"
-  }, React.createElement("a", {
+  }, React.createElement("div", {
+    className: "videoSelectedTimeFrameContainer"
+  }, React.createElement("div", {
+    className: "videoSelectedTimeFrameContainerCurrent",
+    style: {
+      left: "".concat(props.frameCurrentX, "%"),
+      width: "".concat(props.frameCurrentWidth, "%")
+    }
+  })), React.createElement("div", null, React.createElement("a", {
     className: "rvt-controller-item",
     title: "Pause",
     onClick: onPlayPauseClick
@@ -36,7 +44,7 @@ var Controls = function Controls(_ref) {
     onClick: onEncode
   }, React.createElement(Icon, {
     name: processing ? "spin" : "replay"
-  }))));
+  })))));
 };
 
 export default Controls;

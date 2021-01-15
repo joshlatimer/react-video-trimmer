@@ -121,7 +121,8 @@ function (_React$Component) {
       }, _defineProperty(_React$createElement, "onPlay", this.handleOnPlay), _defineProperty(_React$createElement, "onProgress", this.handlePlayerProgress), _defineProperty(_React$createElement, "url", this.props.src), _defineProperty(_React$createElement, "ref", function ref(el) {
         return _this2.player = el;
       }), _defineProperty(_React$createElement, "playing", this.state.playing), _defineProperty(_React$createElement, "style", {
-        margin: "0 auto"
+        margin: "0 auto",
+        position: "relative"
       }), _React$createElement), this.props.children), React.createElement("div", {
         className: "rvt-player-time-range-cont"
       }, React.createElement("span", {
@@ -130,7 +131,9 @@ function (_React$Component) {
         className: "rvt-player-time-range"
       }, "To: ", React.createElement("strong", null, this.displaySeconds(end))), React.createElement("span", {
         className: "rvt-player-time-range"
-      }, "Selected ", React.createElement("strong", null, this.displaySeconds(end - start)), " of", " ", React.createElement("strong", null, this.displaySeconds(this.props.timeLimit)), " allowed")));
+      }, "Selected ", React.createElement("strong", null, this.displaySeconds(end - start)), " of", " ", React.createElement("strong", null, this.displaySeconds(this.props.timeLimit)), " allowed"), React.createElement("span", {
+        className: "rvt-player-time-range"
+      }, React.createElement("strong", null, this.displaySeconds(this.props.vidDuration)), " vid length")));
     }
   }]);
 
