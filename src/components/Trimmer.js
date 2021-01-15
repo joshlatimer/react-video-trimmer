@@ -141,8 +141,9 @@ class Trimmer extends PureComponent {
         <Dragger x={current} onDrag={() => {}} onDragStop={() => {}}>
           <TimeStamp noMicroSeconds time={this.props.currentTime} />
         </Dragger>
+        
         <Dragger
-          x={start}
+          x={end}
           onDrag={this.handleDragEnd}
           onDragStop={this.handleDragStop}
         >

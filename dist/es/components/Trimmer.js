@@ -197,7 +197,7 @@ function (_PureComponent) {
         noMicroSeconds: true,
         time: this.props.currentTime
       })), React.createElement(Dragger, {
-        x: start,
+        x: end,
         onDrag: this.handleDragEnd,
         onDragStop: this.handleDragStop
       }, React.createElement(TimeStamp, {

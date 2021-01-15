@@ -6,6 +6,8 @@
   background: blueviolet;
   cursor: col-resize;
 
+  z-index:5555;
+
   &::after {
     content: "";
     position: absolute;
@@ -45,7 +47,4 @@
     bottom: 0;
   }
 
-  &:hover {
-    background: #333;
-  }
 }

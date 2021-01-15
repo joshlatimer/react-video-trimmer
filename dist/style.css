@@ -17,13 +17,20 @@
   to {
     transform: rotate(360deg); } }
 
+.rvt-icon {
+  width: 1em;
+  height: 1em;
+  fill: #038c7f;
+  vertical-align: middle; }
+
 .rvt-dragger {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 5px;
   background: blueviolet;
-  cursor: col-resize; }
+  cursor: col-resize;
+  z-index: 5555; }
   .rvt-dragger::after {
     content: "";
     position: absolute;
@@ -52,8 +59,34 @@
     right: -2px;
     top: 0;
     bottom: 0; }
-  .rvt-dragger-container:hover {
-    background: #333; }
+
+.rvt-file-picker {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  border: 1px solid #038c7f;
+  background-color: #ccfdf856;
+  cursor: pointer;
+  color: #038c7f; }
+  .rvt-file-picker input {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0; }
+
+.rvt-status {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  background-color: #ccfdf856;
+  cursor: pointer;
+  font-size: 20px;
+  color: #038c7f; }
+  .rvt-status input {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0; }
 
 .btn-reset, .rvt-controller-item,
 .rvt-file-picker-control, .rvt-controller-dropdown .rvt-controller-list a {
@@ -139,12 +172,6 @@
   width: 100%;
   height: 100%; }
 
-.rvt-icon {
-  width: 1em;
-  height: 1em;
-  fill: #038c7f;
-  vertical-align: middle; }
-
 .rvt-player-cont {
   position: relative; }
   .rvt-player-cont .rvt-player-time-range-cont {
@@ -154,20 +181,6 @@
       color: #8f8f8f;
       font-size: 14px;
       padding: 5px; }
-
-.rvt-file-picker {
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-  border: 1px solid #038c7f;
-  background-color: #ccfdf856;
-  cursor: pointer;
-  color: #038c7f; }
-  .rvt-file-picker input {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    left: 0; }
 
 .rvt-trimmer-cont {
   display: block;
@@ -212,17 +225,3 @@
     bottom: -9px;
     left: 50%;
     margin-left: -5px; }
-
-.rvt-status {
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-  background-color: #ccfdf856;
-  cursor: pointer;
-  font-size: 20px;
-  color: #038c7f; }
-  .rvt-status input {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    left: 0; }
