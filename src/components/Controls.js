@@ -29,7 +29,7 @@ const Controls = ({
       </div>
 
 
-      <div>
+      <div className="px-4 pb-2">
         <a
           className="rvt-controller-item"
           title="Pause"
@@ -38,13 +38,6 @@ const Controls = ({
           <Icon name={playing ? "pause" : "play"} />
         </a>
 
-        <a
-          className="rvt-controller-item"
-          title="Select File"
-          onClick={onReselectFile}
-        >
-          <Icon name="music" />
-        </a>
         {showEncodeBtn && (
           <div className="rvt-controller-dropdown rvt-controller-list-wrap">
             {canDownload ? (

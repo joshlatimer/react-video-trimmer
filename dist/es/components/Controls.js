@@ -28,18 +28,14 @@ var Controls = function Controls(_ref) {
     style: {
       left: "".concat(frameCurrentPlayedX, "%")
     }
-  })), React.createElement("div", null, React.createElement("a", {
+  })), React.createElement("div", {
+    className: "px-4 pb-2"
+  }, React.createElement("a", {
     className: "rvt-controller-item",
     title: "Pause",
     onClick: onPlayPauseClick
   }, React.createElement(Icon, {
     name: playing ? "pause" : "play"
-  })), React.createElement("a", {
-    className: "rvt-controller-item",
-    title: "Select File",
-    onClick: onReselectFile
-  }, React.createElement(Icon, {
-    name: "music"
   })), showEncodeBtn && React.createElement("div", {
     className: "rvt-controller-dropdown rvt-controller-list-wrap"
   }, canDownload ? React.createElement("a", {

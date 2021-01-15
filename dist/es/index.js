@@ -141,7 +141,6 @@ function (_React$PureComponent) {
       });
 
       var webVideo = _this.webVideo;
-      console.log("decodingVideoFile  ", file);
       webVideo.videoFile = file;
       webVideo.decode(file).then(function (_ref) {
         var blob = _ref.blob,
@@ -275,9 +274,14 @@ function (_React$PureComponent) {
       }));
     });
 
+    _defineProperty(_assertThisInitialized(_this), "downloadVideo", function () {
+      _this.handleDownloadVideo(_this.state.encodedVideo);
+    });
+
     _defineProperty(_assertThisInitialized(_this), "handleDownloadVideo", function (encodedVideo) {
       var blobURL = readBlobURL(encodedVideo);
-      download(blobURL, "trimmed.mp4");
+      var path = _this.props.downloadPath ? _this.props.downloadPath : "trimmed.mp4";
+      download(blobURL, path); // "trimmed.mp4");
     });
 
     _defineProperty(_assertThisInitialized(_this), "VideoPlayerNoTrimmer", function () {
@@ -337,7 +341,8 @@ _defineProperty(ReactVideoTrimmer, "propTypes", {
   onVideoEncode: PropTypes.func,
   showEncodeBtn: PropTypes.bool,
   timeLimit: PropTypes.number,
-  loadingFFMPEGText: PropTypes.string
+  loadingFFMPEGText: PropTypes.string,
+  downloadPath: PropTypes.string
 });
 
 export var preloadWebVideo = webVideoLoader;
