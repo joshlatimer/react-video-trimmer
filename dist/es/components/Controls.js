@@ -1,3 +1,5 @@
+var _this = this;
+
 import React from "react";
 import Icon from "./Icon";
 
@@ -17,8 +19,8 @@ var Controls = function Controls(_ref) {
   }, React.createElement("div", {
     className: "videoSelectedTimeFrameContainerCurrent",
     style: {
-      left: "".concat(props.frameCurrentX, "%"),
-      width: "".concat(props.frameCurrentWidth, "%")
+      left: "".concat(_this.props.frameCurrentX, "%"),
+      width: "".concat(_this.props.frameCurrentWidth, "%")
     }
   })), React.createElement("div", null, React.createElement("a", {
     className: "rvt-controller-item",

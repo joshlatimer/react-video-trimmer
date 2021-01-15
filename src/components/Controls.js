@@ -16,8 +16,8 @@ const Controls = ({
 
       <div className="videoSelectedTimeFrameContainer">
         <div className="videoSelectedTimeFrameContainerCurrent" style={{
-            left: `${props.frameCurrentX}%`,
-            width: `${props.frameCurrentWidth}%`
+            left: `${this.props.frameCurrentX}%`,
+            width: `${this.props.frameCurrentWidth}%`
           }}></div>
       </div>
 
