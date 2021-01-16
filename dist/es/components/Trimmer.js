@@ -119,6 +119,7 @@ function (_PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "handleDragStart", function (pos) {
       var pos2Time = _this.pos2Time(_this.keepInRange(pos.x));
 
+      console.log("dragStart", pos2Time);
       var time = pos2Time;
       var currentTime = _this.props.currentTime;
 
@@ -127,6 +128,7 @@ function (_PureComponent) {
       var currentTimeIsWithinLimit = _this.withinTimeLimit(time, false);
 
       if (time >= currentTime || !currentTimeIsWithinRange || !currentTimeIsWithinLimit) {
+        console.log("Pausing player");
         time = _this.props.startTime;
 
         var handler = _this.props.onPausePlayer || function () {};
@@ -278,6 +280,7 @@ function (_PureComponent2) {
       }, this.props.showTrimmer && React.createElement(Trimmer, {
         timeLimit: this.props.timeLimit,
         onStartTimeChange: this.handleStartTimeChange,
+        onCurrentTimeChange: this.handleCurrentTimeChange,
         onEndTimeChange: this.handleEndTimeChange,
         widthDurationRatio: this.widthDurationRatio,
         containerWidth: this.containerWidth,

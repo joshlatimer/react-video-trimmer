@@ -29,7 +29,7 @@ var Controls = function Controls(_ref) {
       left: "".concat(frameCurrentPlayedX, "%")
     }
   })), React.createElement("div", {
-    className: "px-4 pb-2"
+    className: "px-2 pb-0"
   }, React.createElement("a", {
     className: "rvt-controller-item",
     title: "Pause",

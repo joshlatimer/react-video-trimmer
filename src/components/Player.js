@@ -23,6 +23,8 @@ class Player extends React.Component {
   handlePlayerProgress = data => {
     if (data.loaded) {
       const { playedSeconds } = data;
+
+      console.log("handlePlayerProgress " + playedSeconds);
       const startTimeRange = this.props.timeRange.start;
       const endTimeRange = this.props.timeRange.end;
       const playedSecondsIsLowerThanStartTime = playedSeconds <= startTimeRange;
@@ -69,7 +71,7 @@ class Player extends React.Component {
           ></ReactPlayer>
           {this.props.children}
         </div>
-        
+          
 
         <div className="rvt-player-time-range-cont">
           <span className="rvt-player-time-range">

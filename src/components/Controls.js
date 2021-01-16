@@ -29,7 +29,7 @@ const Controls = ({
       </div>
 
 
-      <div className="px-4 pb-2">
+      <div className="px-2 pb-0">
         <a
           className="rvt-controller-item"
           title="Pause"

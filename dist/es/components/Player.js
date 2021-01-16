@@ -47,6 +47,7 @@ function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "handlePlayerProgress", function (data) {
       if (data.loaded) {
         var playedSeconds = data.playedSeconds;
+        console.log("handlePlayerProgress " + playedSeconds);
         var startTimeRange = _this.props.timeRange.start;
         var endTimeRange = _this.props.timeRange.end;
         var playedSecondsIsLowerThanStartTime = playedSeconds <= startTimeRange;

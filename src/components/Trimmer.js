@@ -78,6 +78,8 @@ class Trimmer extends PureComponent {
 
   handleDragStart = pos => {
     const pos2Time = this.pos2Time(this.keepInRange(pos.x));
+
+    console.log("dragStart", pos2Time);
     let time = pos2Time;
 
     const currentTime = this.props.currentTime;
@@ -89,6 +91,10 @@ class Trimmer extends PureComponent {
       !currentTimeIsWithinRange ||
       !currentTimeIsWithinLimit
     ) {
+
+      console.log("Pausing player");
+
+
       time = this.props.startTime;
       const handler = this.props.onPausePlayer || (() => {});
       handler();
@@ -205,6 +211,7 @@ export class VideoTrimmer extends PureComponent {
           <Trimmer
             timeLimit={this.props.timeLimit}
             onStartTimeChange={this.handleStartTimeChange}
+            onCurrentTimeChange={this.handleCurrentTimeChange}
             onEndTimeChange={this.handleEndTimeChange}
             widthDurationRatio={this.widthDurationRatio}
             containerWidth={this.containerWidth}

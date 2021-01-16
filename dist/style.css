@@ -5,25 +5,6 @@
   outline: 0;
   background: none; }
 
-.rvt-main-container > * {
-  box-sizing: border-box; }
-
-.rvt-main-container .rvt-icon-spin {
-  animation: spin infinite 1s linear; }
-
-@keyframes spin {
-  from {
-    transform: rotate(0); }
-  to {
-    transform: rotate(360deg); } }
-
-.btn-reset, .rvt-controller-item,
-.rvt-file-picker-control, .rvt-controller-dropdown .rvt-controller-list a {
-  padding: 0;
-  border: 0;
-  outline: 0;
-  background: none; }
-
 .rvt-controls-cont {
   margin-top: 10px;
   text-align: left;
@@ -31,7 +12,7 @@
   bottom: 0px;
   left: 0px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.5); }
   .rvt-controls-cont .seconds {
     font-size: 12px;
     line-height: 36px;
@@ -55,7 +36,7 @@
   font-size: 16px;
   text-align: center;
   color: #999;
-  padding: 10px;
+  padding: 5px;
   margin-right: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   cursor: pointer; }
@@ -135,6 +116,39 @@
   background-color: white;
   border-radius: 1000px; }
 
+.btn-reset, .rvt-controller-item,
+.rvt-file-picker-control, .rvt-controller-dropdown .rvt-controller-list a {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none; }
+
+.rvt-main-container > * {
+  box-sizing: border-box; }
+
+.rvt-main-container .rvt-icon-spin {
+  animation: spin infinite 1s linear; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
+.rvt-file-picker {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  border: 1px solid #038c7f;
+  background-color: #ccfdf856;
+  cursor: pointer;
+  color: #038c7f; }
+  .rvt-file-picker input {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0; }
+
 .rvt-dragger {
   position: absolute;
   top: 0;
@@ -172,6 +186,12 @@
     top: 0;
     bottom: 0; }
 
+.rvt-icon {
+  width: 2em;
+  height: 2em;
+  fill: white;
+  vertical-align: middle; }
+
 .rvt-player-cont {
   position: relative; }
   .rvt-player-cont .rvt-player-time-range-cont {
@@ -190,40 +210,6 @@
   position: absolute;
   top: 0;
   left: 0; }
-
-.rvt-file-picker {
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-  border: 1px solid #038c7f;
-  background-color: #ccfdf856;
-  cursor: pointer;
-  color: #038c7f; }
-  .rvt-file-picker input {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    left: 0; }
-
-.rvt-icon {
-  width: 2em;
-  height: 2em;
-  fill: white;
-  vertical-align: middle; }
-
-.rvt-status {
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-  background-color: #ccfdf856;
-  cursor: pointer;
-  font-size: 20px;
-  color: #038c7f; }
-  .rvt-status input {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    left: 0; }
 
 .rvt-trimmer-cont {
   display: block;
@@ -268,3 +254,17 @@
     bottom: -9px;
     left: 50%;
     margin-left: -5px; }
+
+.rvt-status {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  background-color: #ccfdf856;
+  cursor: pointer;
+  font-size: 20px;
+  color: #038c7f; }
+  .rvt-status input {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0; }
