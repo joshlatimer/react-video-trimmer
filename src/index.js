@@ -212,6 +212,8 @@ class ReactVideoTrimmer extends React.PureComponent {
 
 
     let path = this.props.downloadPath ? this.props.downloadPath : "trimmed.mp4";
+
+    console.log("downloading " + blobURL);
     download(blobURL, path);// "trimmed.mp4");
   };
   VideoPlayerNoTrimmer = () => {

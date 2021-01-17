@@ -68,6 +68,6 @@ export const noop = () => {};
 
 export const arrayBufferToBlob = buffer =>
   new Blob([new Uint8Array(buffer, 0, buffer.byteLength)], {
-    type: "video/webm",
-    name: "video.webm"
+    type: "video/mp4",
+    name: "video.mp4"
   });

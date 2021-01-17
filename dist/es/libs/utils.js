@@ -82,7 +82,7 @@ export var leftZero = function leftZero(num, count) {
 export var noop = function noop() {};
 export var arrayBufferToBlob = function arrayBufferToBlob(buffer) {
   return new Blob([new Uint8Array(buffer, 0, buffer.byteLength)], {
-    type: "video/webm",
-    name: "video.webm"
+    type: "video/mp4",
+    name: "video.mp4"
   });
 };

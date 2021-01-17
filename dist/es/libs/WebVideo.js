@@ -67,7 +67,7 @@ function (_EventEmitter) {
       workerClient.convertInputFileToArrayBuffer().then(function (arrayBuffer) {
         while (!workerClient.workerIsReady) {}
 
-        var filename = "video-".concat(Date.now(), ".webm");
+        var filename = "video-".concat(Date.now(), ".mp4");
         console.log("filename", filename);
         var inputCommand = "-ss ".concat(startSeconds, " -t ").concat(length, " -i ").concat(filename, " -vcodec copy -acodec copy sliced-output.mp4");
         console.log("trim", inputCommand); //   const inputCommand = `-i ${filename} ${command}`;

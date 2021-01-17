@@ -40,7 +40,7 @@ class WebVideo extends EventEmitter {
 
     workerClient.convertInputFileToArrayBuffer().then(arrayBuffer => {
       while (!workerClient.workerIsReady) {}
-      const filename = `video-${Date.now()}.webm`;
+      const filename = `video-${Date.now()}.mp4`;
       console.log("filename", filename);
 
       const inputCommand = `-ss ${startSeconds} -t ${length} -i ${filename} -vcodec copy -acodec copy sliced-output.mp4`;

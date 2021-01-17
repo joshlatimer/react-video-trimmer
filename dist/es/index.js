@@ -285,6 +285,7 @@ function (_React$PureComponent) {
     _defineProperty(_assertThisInitialized(_this), "handleDownloadVideo", function (encodedVideo) {
       var blobURL = readBlobURL(encodedVideo);
       var path = _this.props.downloadPath ? _this.props.downloadPath : "trimmed.mp4";
+      console.log("downloading " + blobURL);
       download(blobURL, path); // "trimmed.mp4");
     });
 
