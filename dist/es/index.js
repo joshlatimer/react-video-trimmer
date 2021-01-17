@@ -271,7 +271,8 @@ function (_React$PureComponent) {
         timeLimit: _this.props.timeLimit,
         timeRangeLimit: _this.props.timeRange,
         timeRange: _this.state.timeRange,
-        currentTime: _this.state.playedSeconds
+        currentTime: _this.state.playedSeconds,
+        onPlayerProgress: _this.handlePlayerProgress
       }));
     });
 

@@ -136,7 +136,7 @@ function (_PureComponent) {
         handler();
       }
 
-      _this.props.onCurrentTimeChange(time);
+      _this.props.onPlayerProgress(time);
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleDragStart", function (pos) {

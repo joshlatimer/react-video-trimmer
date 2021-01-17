@@ -100,7 +100,7 @@ class Trimmer extends PureComponent {
       const handler = this.props.onPausePlayer || (() => {});
       handler();
     }
-    this.props.onCurrentTimeChange(time);
+    this.props.onPlayerProgress(time);
   };
 
 
