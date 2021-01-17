@@ -135,20 +135,6 @@
   background-color: white;
   border-radius: 1000px; }
 
-.rvt-file-picker {
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-  border: 1px solid #038c7f;
-  background-color: #ccfdf856;
-  cursor: pointer;
-  color: #038c7f; }
-  .rvt-file-picker input {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    left: 0; }
-
 .rvt-dragger {
   position: absolute;
   top: 0;
@@ -191,6 +177,20 @@
   height: 2em;
   fill: white;
   vertical-align: middle; }
+
+.rvt-file-picker {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  border: 1px solid #038c7f;
+  background-color: #ccfdf856;
+  cursor: pointer;
+  color: #038c7f; }
+  .rvt-file-picker input {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0; }
 
 .rvt-player-cont {
   position: relative; }

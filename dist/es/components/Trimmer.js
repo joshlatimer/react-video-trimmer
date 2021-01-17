@@ -315,7 +315,7 @@ function (_PureComponent2) {
         duration: this.props.duration,
         onGetData: this.handleGetTrimData,
         onPausePlayer: this.onPausePlayer,
-        onPlayerProgress: this.props.handlePlayerProgress
+        onPlayerProgress: this.props.onPlayerProgress
       }));
     }
   }, {
