@@ -10,17 +10,10 @@ class Player extends React.Component {
     const newTimeRange = newProps.timeRange;
     const oldTimeRange = this.props.timeRange;
 
-    const newPlayedSeconds = newProps.playedSeconds;
-    const oldPlayedSeconds = this.props.playedSeconds;
-
-    //console.log("newPlayedSeconds " + newPlayedSeconds);
-    //console.log("oldPlayedSeconds " + oldPlayedSeconds);
-
 
     const canSeek =
       (oldTimeRange && newTimeRange.start !== oldTimeRange.start) ||
-      (!oldTimeRange && newTimeRange.start > 0) ||
-      (newPlayedSeconds !== oldPlayedSeconds);
+      (!oldTimeRange && newTimeRange.start > 0);
 
 
     if (canSeek) {
