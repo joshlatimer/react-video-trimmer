@@ -58,7 +58,10 @@ function (_EventEmitter) {
       var start = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       var length = arguments.length > 1 ? arguments[1] : undefined;
       var startSeconds = fromS(start, "hh:mm:ss");
-      workerClient.runCommand("-ss ".concat(startSeconds, " -c copy -t ").concat(length, " sliced-output.mp4"));
+      var cmd = "-ss ".concat(startSeconds, " -to ").concat(length, " -i hasanabi_2021-1-14_1610658134000.mp4 -vcodec copy -acodec copy sliced-output.mp4");
+      console.log("trim", cmd);
+      workerClient.runCommand( //`-ss ${startSeconds} -c copy -t ${length} sliced-output.mp4`
+      cmd);
     });
 
     _defineProperty(_assertThisInitialized(_this), "optimizeVideo", function () {
@@ -357,8 +360,9 @@ function (_EventEmitter) {
   _createClass(WebVideo, [{
     key: "videoFile",
     set: function set(file) {
-      if (file && file.type) {
-        workerClient.inputFile = file;
+      console.log("videoFile");
+
+      if (file && file.type) {//workerClient.inputFile = file;
       }
 
       this._videoFile = file;
