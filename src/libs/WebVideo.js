@@ -43,7 +43,7 @@ class WebVideo extends EventEmitter {
       const filename = `video-${Date.now()}.webm`;
       console.log("filename", filename);
 
-      const inputCommand = `-ss ${startSeconds} -to ${length} -i ${filename} -vcodec copy -acodec copy sliced-output.mp4`;
+      const inputCommand = `-ss ${startSeconds} -t ${length} -i ${filename} -vcodec copy -acodec copy sliced-output.mp4`;
       console.log(`trim`, inputCommand);
 
    //   const inputCommand = `-i ${filename} ${command}`;
