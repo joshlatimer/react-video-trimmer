@@ -13,8 +13,8 @@ class Player extends React.Component {
     const newPlayedSeconds = newProps.playedSeconds;
     const oldPlayedSeconds = this.props.playedSeconds;
 
-    console.log("newPlayedSeconds " + newPlayedSeconds);
-    console.log("oldPlayedSeconds " + oldPlayedSeconds);
+    //console.log("newPlayedSeconds " + newPlayedSeconds);
+    //console.log("oldPlayedSeconds " + oldPlayedSeconds);
 
 
     const canSeek =

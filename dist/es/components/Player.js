@@ -86,9 +86,9 @@ function (_React$Component) {
       var newTimeRange = newProps.timeRange;
       var oldTimeRange = this.props.timeRange;
       var newPlayedSeconds = newProps.playedSeconds;
-      var oldPlayedSeconds = this.props.playedSeconds;
-      console.log("newPlayedSeconds " + newPlayedSeconds);
-      console.log("oldPlayedSeconds " + oldPlayedSeconds);
+      var oldPlayedSeconds = this.props.playedSeconds; //console.log("newPlayedSeconds " + newPlayedSeconds);
+      //console.log("oldPlayedSeconds " + oldPlayedSeconds);
+
       var canSeek = oldTimeRange && newTimeRange.start !== oldTimeRange.start || !oldTimeRange && newTimeRange.start > 0 || newPlayedSeconds !== oldPlayedSeconds;
 
       if (canSeek) {
