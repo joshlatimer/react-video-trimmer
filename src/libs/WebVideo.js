@@ -31,13 +31,13 @@ class WebVideo extends EventEmitter {
     const startSeconds = fromS(start, "hh:mm:ss");
 
 
-    console.log("workerClient", workerClient);
+    console.log("workerClient grr", workerClient);
     
-    /*workerClient.runCommand(
-      //`-ss ${startSeconds} -c copy -t ${length} sliced-output.mp4`
-      cmd
-    );*/
+    workerClient.runCommand(
+      `-ss ${startSeconds} -c copy -t ${length} sliced-output.mp4`
+    );
 
+    /*
     workerClient.convertInputFileToArrayBuffer().then(arrayBuffer => {
       while (!workerClient.workerIsReady) {}
       const filename = `video-${Date.now()}.mp4`;
@@ -58,7 +58,7 @@ class WebVideo extends EventEmitter {
         ],
         totalMemory: 33554432
       });
-    });
+    });*/
 
     
   };
