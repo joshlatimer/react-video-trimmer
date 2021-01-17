@@ -58,10 +58,30 @@ function (_EventEmitter) {
       var start = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       var length = arguments.length > 1 ? arguments[1] : undefined;
       var startSeconds = fromS(start, "hh:mm:ss");
-      var cmd = "-ss ".concat(startSeconds, " -to ").concat(length, " -i hasanabi_2021-1-14_1610658134000.mp4 -vcodec copy -acodec copy sliced-output.mp4");
-      console.log("trim", cmd);
-      workerClient.runCommand( //`-ss ${startSeconds} -c copy -t ${length} sliced-output.mp4`
-      cmd);
+      console.log("workerClient", workerClient);
+      /*workerClient.runCommand(
+        //`-ss ${startSeconds} -c copy -t ${length} sliced-output.mp4`
+        cmd
+      );*/
+
+      workerClient.convertInputFileToArrayBuffer().then(function (arrayBuffer) {
+        while (!workerClient.workerIsReady) {}
+
+        var filename = "video-".concat(Date.now(), ".webm");
+        console.log("filename", filename);
+        var inputCommand = "-ss ".concat(startSeconds, " -to ").concat(length, " -i ").concat(filename, " -vcodec copy -acodec copy sliced-output.mp4");
+        console.log("trim", cmd); //   const inputCommand = `-i ${filename} ${command}`;
+
+        workerClient.worker.postMessage({
+          type: "command",
+          arguments: inputCommand.split(" "),
+          files: [{
+            data: new Uint8Array(arrayBuffer),
+            name: filename
+          }],
+          totalMemory: totalMemory
+        });
+      });
     });
 
     _defineProperty(_assertThisInitialized(_this), "optimizeVideo", function () {
@@ -362,7 +382,8 @@ function (_EventEmitter) {
     set: function set(file) {
       console.log("videoFile");
 
-      if (file && file.type) {//workerClient.inputFile = file;
+      if (file && file.type) {
+        workerClient.inputFile = file;
       }
 
       this._videoFile = file;

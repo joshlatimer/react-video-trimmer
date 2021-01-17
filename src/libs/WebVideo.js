@@ -30,12 +30,36 @@ class WebVideo extends EventEmitter {
   trimVideo = (start = 0, length) => {
     const startSeconds = fromS(start, "hh:mm:ss");
 
-    let cmd = `-ss ${startSeconds} -to ${length} -i hasanabi_2021-1-14_1610658134000.mp4 -vcodec copy -acodec copy sliced-output.mp4`;
-    console.log(`trim`, cmd);
-    workerClient.runCommand(
+
+    console.log("workerClient", workerClient);
+    
+    /*workerClient.runCommand(
       //`-ss ${startSeconds} -c copy -t ${length} sliced-output.mp4`
       cmd
-    );
+    );*/
+
+    workerClient.convertInputFileToArrayBuffer().then(arrayBuffer => {
+      while (!workerClient.workerIsReady) {}
+      const filename = `video-${Date.now()}.webm`;
+      console.log("filename", filename);
+
+      const inputCommand = `-ss ${startSeconds} -to ${length} -i ${filename} -vcodec copy -acodec copy sliced-output.mp4`;
+      console.log(`trim`, cmd);
+
+   //   const inputCommand = `-i ${filename} ${command}`;
+      workerClient.worker.postMessage({
+        type: "command",
+        arguments: inputCommand.split(" "),
+        files: [
+          {
+            data: new Uint8Array(arrayBuffer),
+            name: filename
+          }
+        ],
+        totalMemory
+      });
+    });
+
     
   };
 
@@ -91,7 +115,7 @@ class WebVideo extends EventEmitter {
     console.log("videoFile");
 
     if (file && file.type) {
-      //workerClient.inputFile = file;
+      workerClient.inputFile = file;
     }
     this._videoFile = file;
   }
