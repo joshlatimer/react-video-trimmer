@@ -76,6 +76,34 @@ class Trimmer extends PureComponent {
     return timeRange ? interval >= timeRange : true;
   };
 
+
+  //setCurrentTime
+  //josh added!
+  setCurrentTime = pos => {
+    const pos2Time = this.pos2Time(this.keepInRange(pos.x));
+
+    let time = pos2Time;
+    console.log("dragStart", pos2Time);
+
+    const currentTime = this.props.currentTime;
+    const currentTimeIsWithinRange = this.withinTimeRange(time, false);
+    const currentTimeIsWithinLimit = this.withinTimeLimit(time, false);
+
+    if (!currentTimeIsWithinRange ||
+      !currentTimeIsWithinLimit
+    ) {
+
+      console.log("Pausing player");
+
+
+      time = this.props.startTime;
+      const handler = this.props.onPausePlayer || (() => {});
+      handler();
+    }
+    this.props.onCurrentTimeChange(time);
+  };
+
+
   handleDragStart = pos => {
     const pos2Time = this.pos2Time(this.keepInRange(pos.x));
 
@@ -86,9 +114,7 @@ class Trimmer extends PureComponent {
     const currentTimeIsWithinRange = this.withinTimeRange(time, false);
     const currentTimeIsWithinLimit = this.withinTimeLimit(time, false);
 
-    if (
-      time >= currentTime ||
-      !currentTimeIsWithinRange ||
+    if (!currentTimeIsWithinRange ||
       !currentTimeIsWithinLimit
     ) {
 
@@ -111,9 +137,7 @@ class Trimmer extends PureComponent {
     const currentTimeIsWithinRange = this.withinTimeRange(time);
     const currentTimeIsWithinLimit = this.withinTimeLimit(time);
 
-    if (
-      currentTime >= time ||
-      !currentTimeIsWithinRange ||
+    if (!currentTimeIsWithinRange ||
       !currentTimeIsWithinLimit
     ) {
       time = this.props.endTime;
@@ -144,9 +168,13 @@ class Trimmer extends PureComponent {
         >
           <TimeStamp time={this.props.startTime} />
         </Dragger>
-        <Dragger x={current} onDrag={() => {}} onDragStop={() => {}}>
+
+
+
+        <Dragger x={current} onDrag={this.setCurrentTime} onDragStop={() => {}}>
           <TimeStamp noMicroSeconds time={this.props.currentTime} />
         </Dragger>
+
         
         <Dragger
           x={end}

@@ -116,6 +116,29 @@ function (_PureComponent) {
       return timeRange ? interval >= timeRange : true;
     });
 
+    _defineProperty(_assertThisInitialized(_this), "setCurrentTime", function (pos) {
+      var pos2Time = _this.pos2Time(_this.keepInRange(pos.x));
+
+      var time = pos2Time;
+      console.log("dragStart", pos2Time);
+      var currentTime = _this.props.currentTime;
+
+      var currentTimeIsWithinRange = _this.withinTimeRange(time, false);
+
+      var currentTimeIsWithinLimit = _this.withinTimeLimit(time, false);
+
+      if (!currentTimeIsWithinRange || !currentTimeIsWithinLimit) {
+        console.log("Pausing player");
+        time = _this.props.startTime;
+
+        var handler = _this.props.onPausePlayer || function () {};
+
+        handler();
+      }
+
+      _this.props.onCurrentTimeChange(time);
+    });
+
     _defineProperty(_assertThisInitialized(_this), "handleDragStart", function (pos) {
       var pos2Time = _this.pos2Time(_this.keepInRange(pos.x));
 
@@ -127,7 +150,7 @@ function (_PureComponent) {
 
       var currentTimeIsWithinLimit = _this.withinTimeLimit(time, false);
 
-      if (time >= currentTime || !currentTimeIsWithinRange || !currentTimeIsWithinLimit) {
+      if (!currentTimeIsWithinRange || !currentTimeIsWithinLimit) {
         console.log("Pausing player");
         time = _this.props.startTime;
 
@@ -150,7 +173,7 @@ function (_PureComponent) {
 
       var currentTimeIsWithinLimit = _this.withinTimeLimit(time);
 
-      if (currentTime >= time || !currentTimeIsWithinRange || !currentTimeIsWithinLimit) {
+      if (!currentTimeIsWithinRange || !currentTimeIsWithinLimit) {
         time = _this.props.endTime;
 
         var handler = _this.props.onPausePlayer || function () {};
@@ -193,7 +216,7 @@ function (_PureComponent) {
         time: this.props.startTime
       })), React.createElement(Dragger, {
         x: current,
-        onDrag: function onDrag() {},
+        onDrag: this.setCurrentTime,
         onDragStop: function onDragStop() {}
       }, React.createElement(TimeStamp, {
         noMicroSeconds: true,
