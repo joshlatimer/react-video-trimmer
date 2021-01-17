@@ -80,7 +80,9 @@ class ReactVideoTrimmer extends React.PureComponent {
     timeRange: { start: 5, end: this.props.timeLimit || 15 },
     encodedVideo: null,
     playedSeconds: 0,
-    ffmpegReady: false
+    ffmpegReady: false,
+
+    trimmedTimeRange: { start: 0, end: 10 },
   };
 
   state = this.defaultState;
@@ -124,7 +126,8 @@ class ReactVideoTrimmer extends React.PureComponent {
     this.setState({ timeRange: time });
   };
   handleEncodeVideo = timeRange => {
-    this.setState({ encoding: true, videoDataURL: "", playVideo: false });
+    this.setState({ encoding: true, videoDataURL: "", playVideo: false, trimmedTimeRange: timeRange });
+    
     const timeDifference = timeRange.end - timeRange.start;
     // console.log(timeRange);
     this.webVideo.trimVideo(timeRange.start, timeDifference);
@@ -215,7 +218,8 @@ class ReactVideoTrimmer extends React.PureComponent {
       this.props.onDownloadRequest({
         success: true,
         playedSeconds: this.state.playedSeconds,
-        timeRange: this.state.timeRange
+        timeRange: this.state.timeRange,
+        trimmedTimeRange: this.state.trimmedTimeRange
       });
       return
     }

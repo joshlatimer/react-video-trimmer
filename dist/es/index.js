@@ -104,7 +104,11 @@ function (_React$PureComponent) {
       },
       encodedVideo: null,
       playedSeconds: 0,
-      ffmpegReady: false
+      ffmpegReady: false,
+      trimmedTimeRange: {
+        start: 0,
+        end: 10
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "state", _this.defaultState);
@@ -186,7 +190,8 @@ function (_React$PureComponent) {
       _this.setState({
         encoding: true,
         videoDataURL: "",
-        playVideo: false
+        playVideo: false,
+        trimmedTimeRange: timeRange
       });
 
       var timeDifference = timeRange.end - timeRange.start; // console.log(timeRange);
@@ -287,7 +292,8 @@ function (_React$PureComponent) {
         _this.props.onDownloadRequest({
           success: true,
           playedSeconds: _this.state.playedSeconds,
-          timeRange: _this.state.timeRange
+          timeRange: _this.state.timeRange,
+          trimmedTimeRange: _this.state.trimmedTimeRange
         });
 
         return;
