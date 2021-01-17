@@ -56,7 +56,7 @@ class WebVideo extends EventEmitter {
             name: filename
           }
         ],
-        totalMemory
+        totalMemory: 33554432
       });
     });
 

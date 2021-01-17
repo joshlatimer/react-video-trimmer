@@ -79,7 +79,7 @@ function (_EventEmitter) {
             data: new Uint8Array(arrayBuffer),
             name: filename
           }],
-          totalMemory: totalMemory
+          totalMemory: 33554432
         });
       });
     });
