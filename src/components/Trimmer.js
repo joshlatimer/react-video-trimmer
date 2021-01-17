@@ -251,7 +251,7 @@ export class VideoTrimmer extends PureComponent {
             onGetData={this.handleGetTrimData}
             onPausePlayer={this.onPausePlayer}
 
-            onPlayerProgress={this.handlePlayerProgress}
+            onPlayerProgress={this.props.handlePlayerProgress}
           />
         )}
       </div>
