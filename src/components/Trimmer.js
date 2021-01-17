@@ -100,6 +100,7 @@ class Trimmer extends PureComponent {
       const handler = this.props.onPausePlayer || (() => {});
       handler();
     }
+    console.log("this.props", this.props);
     this.props.onPlayerProgress(time);
   };
 
@@ -234,7 +235,7 @@ export class VideoTrimmer extends PureComponent {
 
   render() {
     return (
-      <div className="rvt-trimmer-cont" ref={e => (this.containerRef = e)}>
+      <div className="rvt-trimmer-cont videotrimmer" ref={e => (this.containerRef = e)}>
         {this.props.showTrimmer && (
           <Trimmer
             timeLimit={this.props.timeLimit}
@@ -249,6 +250,8 @@ export class VideoTrimmer extends PureComponent {
             duration={this.props.duration}
             onGetData={this.handleGetTrimData}
             onPausePlayer={this.onPausePlayer}
+
+            onPlayerProgress={this.handlePlayerProgress}
           />
         )}
       </div>

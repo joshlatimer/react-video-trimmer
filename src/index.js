@@ -153,7 +153,7 @@ class ReactVideoTrimmer extends React.PureComponent {
   VideoPlayerWithTrimmer = ({ showTrimmer }) => {
     const { decoding, encoding, encoded, videoDataURL } = this.state;
     return (
-      <>
+      <div className="VideoPlayerWithTrimmerVideoPlayerWithTrimmer">
         {!decoding && !encoding && videoDataURL && (
           <Player
             src={this.state.videoDataURL}
@@ -199,7 +199,7 @@ class ReactVideoTrimmer extends React.PureComponent {
         )}
 
         
-      </>
+      </div
     );
   };
 
