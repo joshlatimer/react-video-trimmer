@@ -243,7 +243,6 @@ function (_React$PureComponent) {
         timeRange: _this.state.timeRange,
         timeLimit: _this.props.timeLimit,
         playVideo: _this.state.playVideo,
-        playedSeconds: _this.state.playedSeconds,
         onPlayerPlay: _this.handlePlayerPlay,
         onPlayerPause: _this.handlePlayerPause,
         onPlayerProgress: _this.handlePlayerProgress,

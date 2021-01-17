@@ -160,7 +160,6 @@ class ReactVideoTrimmer extends React.PureComponent {
             timeRange={this.state.timeRange}
             timeLimit={this.props.timeLimit}
             playVideo={this.state.playVideo}
-            playedSeconds={this.state.playedSeconds}
             onPlayerPlay={this.handlePlayerPlay}
             onPlayerPause={this.handlePlayerPause}
             onPlayerProgress={this.handlePlayerProgress}
