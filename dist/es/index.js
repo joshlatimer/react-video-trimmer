@@ -283,6 +283,16 @@ function (_React$PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleDownloadVideo", function (encodedVideo) {
+      if (_this.props.onDownloadRequest) {
+        _this.props.onDownloadRequest({
+          success: true,
+          playedSeconds: _this.state.playedSeconds,
+          timeRange: _this.state.timeRange
+        });
+
+        return;
+      }
+
       var blobURL = readBlobURL(encodedVideo);
       var path = _this.props.downloadPath ? _this.props.downloadPath : "trimmed.mp4";
       console.log("downloading " + blobURL);
@@ -344,6 +354,7 @@ function (_React$PureComponent) {
 
 _defineProperty(ReactVideoTrimmer, "propTypes", {
   onVideoEncode: PropTypes.func,
+  onDownloadRequest: PropTypes.func,
   showEncodeBtn: PropTypes.bool,
   timeLimit: PropTypes.number,
   loadingFFMPEGText: PropTypes.string,

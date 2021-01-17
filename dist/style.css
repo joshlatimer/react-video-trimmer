@@ -17,43 +17,6 @@
   to {
     transform: rotate(360deg); } }
 
-.rvt-dragger {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background: black;
-  cursor: col-resize;
-  z-index: 5555; }
-  .rvt-dragger::after {
-    content: "";
-    position: absolute;
-    left: -2px;
-    right: -2px;
-    top: 0;
-    bottom: 0; }
-  .rvt-dragger:hover {
-    background: #333; }
-
-.rvt-drag-current {
-  background: #038c7f; }
-
-.rvt-dragger-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  cursor: grab;
-  border-radius: 0.3em;
-  border: 2px solid rgba(0, 0, 0, 0.9);
-  background-color: rgba(0, 19, 127, 0.5); }
-  .rvt-dragger-container::after {
-    content: "";
-    position: absolute;
-    left: -2px;
-    right: -2px;
-    top: 0;
-    bottom: 0; }
-
 .rvt-file-picker {
   width: 100%;
   text-align: center;
@@ -186,6 +149,43 @@
   background-color: white;
   border-radius: 1000px; }
 
+.rvt-dragger {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: black;
+  cursor: col-resize;
+  z-index: 5555; }
+  .rvt-dragger::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 0;
+    bottom: 0; }
+  .rvt-dragger:hover {
+    background: #333; }
+
+.rvt-drag-current {
+  background: #038c7f; }
+
+.rvt-dragger-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  cursor: grab;
+  border-radius: 0.3em;
+  border: 2px solid rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 19, 127, 0.5); }
+  .rvt-dragger-container::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: 0;
+    bottom: 0; }
+
 .rvt-player-cont {
   position: relative; }
   .rvt-player-cont .rvt-player-time-range-cont {
@@ -210,20 +210,6 @@
   height: 2em;
   fill: white;
   vertical-align: middle; }
-
-.rvt-status {
-  width: 100%;
-  text-align: center;
-  padding: 50px;
-  background-color: #ccfdf856;
-  cursor: pointer;
-  font-size: 20px;
-  color: #038c7f; }
-  .rvt-status input {
-    visibility: hidden;
-    position: absolute;
-    right: 0;
-    left: 0; }
 
 .rvt-trimmer-cont {
   display: block;
@@ -268,3 +254,17 @@
     bottom: -9px;
     left: 50%;
     margin-left: -5px; }
+
+.rvt-status {
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  background-color: #ccfdf856;
+  cursor: pointer;
+  font-size: 20px;
+  color: #038c7f; }
+  .rvt-status input {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0; }

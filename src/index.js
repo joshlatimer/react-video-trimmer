@@ -19,6 +19,7 @@ class ReactVideoTrimmer extends React.PureComponent {
 
   static propTypes = {
     onVideoEncode: PropTypes.func,
+    onDownloadRequest: PropTypes.func,
     showEncodeBtn: PropTypes.bool,
     timeLimit: PropTypes.number,
     loadingFFMPEGText: PropTypes.string,
@@ -208,8 +209,17 @@ class ReactVideoTrimmer extends React.PureComponent {
     this.handleDownloadVideo(this.state.encodedVideo);
   };
   handleDownloadVideo = encodedVideo => {
-    const blobURL = readBlobURL(encodedVideo);
 
+    if (this.props.onDownloadRequest)
+    {
+      this.props.onDownloadRequest({
+        success: true,
+        playedSeconds: this.state.playedSeconds,
+        timeRange: this.state.timeRange
+      });
+      return
+    }
+    const blobURL = readBlobURL(encodedVideo);
 
     let path = this.props.downloadPath ? this.props.downloadPath : "trimmed.mp4";
 
