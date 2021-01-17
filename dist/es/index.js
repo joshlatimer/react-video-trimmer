@@ -236,7 +236,9 @@ function (_React$PureComponent) {
           encoding = _this$state.encoding,
           encoded = _this$state.encoded,
           videoDataURL = _this$state.videoDataURL;
-      return React.createElement(React.Fragment, null, !decoding && !encoding && videoDataURL && React.createElement(Player, {
+      return React.createElement("div", {
+        className: "VideoPlayerWithTrimmerVideoPlayerWithTrimmer"
+      }, !decoding && !encoding && videoDataURL && React.createElement(Player, {
         src: _this.state.videoDataURL,
         timeRange: _this.state.timeRange,
         timeLimit: _this.props.timeLimit,

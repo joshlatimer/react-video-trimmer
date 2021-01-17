@@ -120,7 +120,7 @@ function (_PureComponent) {
       var pos2Time = _this.pos2Time(_this.keepInRange(pos.x));
 
       var time = pos2Time;
-      console.log("dragStart", pos2Time);
+      console.log("dragStart v5", pos2Time);
       var currentTime = _this.props.currentTime;
 
       var currentTimeIsWithinRange = _this.withinTimeRange(time, false);
@@ -135,6 +135,8 @@ function (_PureComponent) {
 
         handler();
       }
+
+      console.log("this.props", _this.props);
 
       _this.props.onPlayerProgress(time);
     });
@@ -296,7 +298,7 @@ function (_PureComponent2) {
       var _this3 = this;
 
       return React.createElement("div", {
-        className: "rvt-trimmer-cont",
+        className: "rvt-trimmer-cont videotrimmer",
         ref: function ref(e) {
           return _this3.containerRef = e;
         }
@@ -312,7 +314,8 @@ function (_PureComponent2) {
         currentTime: this.props.currentTime,
         duration: this.props.duration,
         onGetData: this.handleGetTrimData,
-        onPausePlayer: this.onPausePlayer
+        onPausePlayer: this.onPausePlayer,
+        onPlayerProgress: this.handlePlayerProgress
       }));
     }
   }, {

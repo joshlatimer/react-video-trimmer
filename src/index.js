@@ -199,7 +199,7 @@ class ReactVideoTrimmer extends React.PureComponent {
         )}
 
         
-      </div
+      </div>
     );
   };
 

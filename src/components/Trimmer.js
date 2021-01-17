@@ -83,7 +83,7 @@ class Trimmer extends PureComponent {
     const pos2Time = this.pos2Time(this.keepInRange(pos.x));
 
     let time = pos2Time;
-    console.log("dragStart", pos2Time);
+    console.log("dragStart v5", pos2Time);
 
     const currentTime = this.props.currentTime;
     const currentTimeIsWithinRange = this.withinTimeRange(time, false);
