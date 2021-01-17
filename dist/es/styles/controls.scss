@@ -1,0 +1,165 @@
+.btn-reset {
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+}
+
+.rvt-controls-cont {
+  margin-top: 10px;
+  text-align: left;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  
+  .seconds {
+    font-size: 12px;
+    line-height: 36px;
+    margin-left: 10px;
+    display: inline-block;
+    overflow: hidden;
+    color: #aaa;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rvt-icon-spin {
+  animation: spin infinite 1s linear;
+}
+
+.rvt-controller-item,
+.rvt-file-picker-control {
+  @extend .btn-reset;
+
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  color: #999;
+  padding: 5px;
+  margin-right: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+  }
+
+  .rvt-icon {
+    display: block;
+  }
+}
+
+.rvt-controller-item::hover
+{
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius:0.5em;
+}
+
+.rvt-controller-dropdown {
+  display: inline-block;
+  position: relative;
+
+  .rvt-controller-list-wrap {
+    position: relative;
+  }
+
+  .rvt-controller-list {
+    position: absolute;
+    width: 60px;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition-durvtion: 0.3s;
+    transition-property: opacity, visibility;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+
+    a {
+      @extend .btn-reset;
+
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 5px 0;
+      color: inherit;
+      font-size: 12px;
+      cursor: pointer;
+
+      &:hover {
+        background: #333;
+        color: #fff;
+      }
+    }
+  }
+
+  &:hover {
+    .rvt-controller-list {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.rvt-controller-clipper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.videoSelectedTimeFrameContainer
+{
+  height:7px;
+  width:100%;
+
+  position: relative;
+  margin-bottom:5px;
+
+  background-color:rgba(70,70,70, 0.5);
+
+}
+.videoSelectedTimeFrameContainerCurrent
+{
+  position: absolute;
+  left:0px;
+  top:0px;
+
+  height:100%;
+  width:50%;
+
+  background-color:orange;
+
+}
+.videoSelectedTimeFrameContainerCurrentPlayed
+{
+  position: absolute;
+  left:0px;
+  top:50%;
+
+  transform: translateX(-50%) translateY(-50%);
+
+  height:15px;
+  width:15px;
+  background-color:white;
+  border-radius:1000px;
+
+}
