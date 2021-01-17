@@ -44,7 +44,7 @@ class WebVideo extends EventEmitter {
       console.log("filename", filename);
 
       const inputCommand = `-ss ${startSeconds} -to ${length} -i ${filename} -vcodec copy -acodec copy sliced-output.mp4`;
-      console.log(`trim`, cmd);
+      console.log(`trim`, inputCommand);
 
    //   const inputCommand = `-i ${filename} ${command}`;
       workerClient.worker.postMessage({

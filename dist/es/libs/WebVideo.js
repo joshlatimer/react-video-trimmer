@@ -70,7 +70,7 @@ function (_EventEmitter) {
         var filename = "video-".concat(Date.now(), ".webm");
         console.log("filename", filename);
         var inputCommand = "-ss ".concat(startSeconds, " -to ").concat(length, " -i ").concat(filename, " -vcodec copy -acodec copy sliced-output.mp4");
-        console.log("trim", cmd); //   const inputCommand = `-i ${filename} ${command}`;
+        console.log("trim", inputCommand); //   const inputCommand = `-i ${filename} ${command}`;
 
         workerClient.worker.postMessage({
           type: "command",
