@@ -97,7 +97,7 @@ const Icon = props => {
       El = Spin;
       break;
     case "changespeed":
-      EL = ChangeSpeed;
+      El = ChangeSpeed;
       break;
     default:
       El = Download;

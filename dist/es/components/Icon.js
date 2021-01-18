@@ -133,7 +133,7 @@ var Icon = function Icon(props) {
       break;
 
     case "changespeed":
-      EL = ChangeSpeed;
+      El = ChangeSpeed;
       break;
 
     default:
