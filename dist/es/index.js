@@ -105,6 +105,7 @@ function (_React$PureComponent) {
       encodedVideo: null,
       playedSeconds: 0,
       ffmpegReady: false,
+      playbackRate: 1,
       trimmedTimeRange: {
         start: 0,
         end: 10
@@ -141,7 +142,8 @@ function (_React$PureComponent) {
       var doneCB = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : noop;
 
       _this.setState({
-        decoding: true
+        decoding: true,
+        encoded: false
       });
 
       var webVideo = _this.webVideo;
@@ -234,6 +236,21 @@ function (_React$PureComponent) {
       }));
     });
 
+    _defineProperty(_assertThisInitialized(_this), "handleChangePlaybackRate", function () {
+      var current = _this.state.playbackRate;
+      current += 1;
+
+      if (current > 3) {
+        current = 1;
+      }
+
+      _this.setState({
+        playbackRate: current
+      });
+
+      console.log("handleChangePlaybackRate to " + current);
+    });
+
     _defineProperty(_assertThisInitialized(_this), "VideoPlayerWithTrimmer", function (_ref2) {
       var showTrimmer = _ref2.showTrimmer;
       var _this$state = _this.state,
@@ -243,16 +260,17 @@ function (_React$PureComponent) {
           videoDataURL = _this$state.videoDataURL;
       return React.createElement("div", {
         className: "VideoPlayerWithTrimmerVideoPlayerWithTrimmer"
-      }, !decoding && !encoding && videoDataURL && React.createElement(Player, {
+      }, !decoding && !encoding && videoDataURL && React.createElement(Player, _defineProperty({
         src: _this.state.videoDataURL,
         timeRange: _this.state.timeRange,
+        playbackRate: _this.state.playbackRate,
         timeLimit: _this.props.timeLimit,
         playVideo: _this.state.playVideo,
         onPlayerPlay: _this.handlePlayerPlay,
         onPlayerPause: _this.handlePlayerPause,
         onPlayerProgress: _this.handlePlayerProgress,
         vidDuration: _this.webVideo.videoData.duration
-      }, !decoding && !encoding && videoDataURL && React.createElement(Controls, {
+      }, "playbackRate", _this.state.playbackRate), !decoding && !encoding && videoDataURL && React.createElement(Controls, {
         onDownload: function onDownload() {
           return _this.handleDownloadVideo(_this.state.encodedVideo);
         },
@@ -269,7 +287,9 @@ function (_React$PureComponent) {
         frameCurrentX: _this.state.timeRange.start / _this.webVideo.videoData.duration * 100,
         frameCurrentWidth: (_this.state.timeRange.end - _this.state.timeRange.start) / _this.webVideo.videoData.duration * 100,
         frameCurrentPlayedX: _this.state.playedSeconds / _this.webVideo.videoData.duration * 100,
-        onPlayerProgress: _this.handlePlayerProgress
+        onPlayerProgress: _this.handlePlayerProgress,
+        playbackRate: _this.state.playbackRate,
+        changePlaybackRate: _this.handleChangePlaybackRate
       })), showTrimmer && React.createElement(Trimmer, {
         onPausePlayer: _this.handlePlayerPause,
         showTrimmer: _this.state.videoDataURL,

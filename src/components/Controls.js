@@ -12,7 +12,10 @@ const Controls = ({
   onDownload,
   frameCurrentX,
   frameCurrentWidth,
-  frameCurrentPlayedX
+  frameCurrentPlayedX,
+
+  changePlaybackRate,
+  playbackRate
 }) => {
   return (
     <div className="rvt-controls-cont">
@@ -37,6 +40,18 @@ const Controls = ({
         >
           <Icon name={playing ? "pause" : "play"} />
         </a>
+
+
+
+        <a
+          className="rvt-controller-item"
+          title="PlaybackRate"
+          onClick={handleChangePlaybackRate}
+        >
+          {playbackRate}x
+          <Icon name={"changespeed"} />
+        </a>
+
 
         {showEncodeBtn && (
           <div className="rvt-controller-dropdown rvt-controller-list-wrap">

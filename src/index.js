@@ -82,6 +82,8 @@ class ReactVideoTrimmer extends React.PureComponent {
     playedSeconds: 0,
     ffmpegReady: false,
 
+    playbackRate: 1,
+
     trimmedTimeRange: { start: 0, end: 10 },
   };
 
@@ -96,7 +98,9 @@ class ReactVideoTrimmer extends React.PureComponent {
     this.setState({ updateVideoDuration: duration });
 
   decodeVideoFile = (file, doneCB = noop) => {
-    this.setState({ decoding: true });
+
+    
+    this.setState({ decoding: true, encoded: false });
     const webVideo = this.webVideo;
 	
 	
@@ -154,6 +158,20 @@ class ReactVideoTrimmer extends React.PureComponent {
       ffmpegReady: true
     });
   };
+
+  handleChangePlaybackRate = () =>
+  {
+    let current =this.state.playbackRate;
+    current += 1;
+    if (current > 3)
+    {
+      current = 1;
+    }
+    this.setState({
+      playbackRate: current
+    });
+    console.log("handleChangePlaybackRate to " + current);
+  }
   VideoPlayerWithTrimmer = ({ showTrimmer }) => {
     const { decoding, encoding, encoded, videoDataURL } = this.state;
     return (
@@ -162,12 +180,14 @@ class ReactVideoTrimmer extends React.PureComponent {
           <Player
             src={this.state.videoDataURL}
             timeRange={this.state.timeRange}
+            playbackRate={this.state.playbackRate}
             timeLimit={this.props.timeLimit}
             playVideo={this.state.playVideo}
             onPlayerPlay={this.handlePlayerPlay}
             onPlayerPause={this.handlePlayerPause}
             onPlayerProgress={this.handlePlayerProgress}
             vidDuration={this.webVideo.videoData.duration}
+            playbackRate={this.state.playbackRate}
           >
             {!decoding && !encoding && videoDataURL && (
               <Controls
@@ -184,6 +204,9 @@ class ReactVideoTrimmer extends React.PureComponent {
                 frameCurrentWidth={((this.state.timeRange.end - this.state.timeRange.start) / this.webVideo.videoData.duration) * 100}
                 frameCurrentPlayedX={(this.state.playedSeconds/ this.webVideo.videoData.duration) * 100}
                 onPlayerProgress={this.handlePlayerProgress}
+
+                playbackRate={this.state.playbackRate}
+                changePlaybackRate={this.handleChangePlaybackRate}
               />
             )}
           </Player>

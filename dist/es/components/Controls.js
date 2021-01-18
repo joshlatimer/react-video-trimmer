@@ -12,7 +12,9 @@ var Controls = function Controls(_ref) {
       onDownload = _ref.onDownload,
       frameCurrentX = _ref.frameCurrentX,
       frameCurrentWidth = _ref.frameCurrentWidth,
-      frameCurrentPlayedX = _ref.frameCurrentPlayedX;
+      frameCurrentPlayedX = _ref.frameCurrentPlayedX,
+      changePlaybackRate = _ref.changePlaybackRate,
+      playbackRate = _ref.playbackRate;
   return React.createElement("div", {
     className: "rvt-controls-cont"
   }, React.createElement("div", {
@@ -36,6 +38,12 @@ var Controls = function Controls(_ref) {
     onClick: onPlayPauseClick
   }, React.createElement(Icon, {
     name: playing ? "pause" : "play"
+  })), React.createElement("a", {
+    className: "rvt-controller-item",
+    title: "PlaybackRate",
+    onClick: handleChangePlaybackRate
+  }, playbackRate, "x", React.createElement(Icon, {
+    name: "changespeed"
   })), showEncodeBtn && React.createElement("div", {
     className: "rvt-controller-dropdown rvt-controller-list-wrap"
   }, canDownload ? React.createElement("a", {

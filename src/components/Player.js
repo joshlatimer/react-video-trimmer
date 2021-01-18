@@ -67,6 +67,7 @@ class Player extends React.Component {
             onPlay={this.handleOnPlay}
             onProgress={this.handlePlayerProgress}
             url={this.props.src}
+            playbackRate={this.props.playbackRate}
             ref={el => (this.player = el)}
             playing={this.state.playing}
             className='react-player'
