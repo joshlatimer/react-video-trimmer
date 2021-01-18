@@ -46,7 +46,7 @@ const Controls = ({
         <a
           className="rvt-controller-item"
           title="PlaybackRate"
-          onClick={handleChangePlaybackRate}
+          onClick={changePlaybackRate}
         >
           {playbackRate}x
           <Icon name={"changespeed"} />

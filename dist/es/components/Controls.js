@@ -41,7 +41,7 @@ var Controls = function Controls(_ref) {
   })), React.createElement("a", {
     className: "rvt-controller-item",
     title: "PlaybackRate",
-    onClick: handleChangePlaybackRate
+    onClick: changePlaybackRate
   }, playbackRate, "x", React.createElement(Icon, {
     name: "changespeed"
   })), showEncodeBtn && React.createElement("div", {
