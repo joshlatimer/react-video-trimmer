@@ -48,8 +48,14 @@ const Controls = ({
           title="PlaybackRate"
           onClick={changePlaybackRate}
         >
-          {playbackRate}x
-          <Icon name={"changespeed"} />
+          <div className="relative">
+            <Icon name={"changespeed"} className="relative" />
+            <div className="absolute left-0 top-0 text-black">
+              {playbackRate}x
+            </div>
+
+          </div>
+          
         </a>
 
 

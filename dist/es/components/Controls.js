@@ -42,9 +42,14 @@ var Controls = function Controls(_ref) {
     className: "rvt-controller-item",
     title: "PlaybackRate",
     onClick: changePlaybackRate
-  }, playbackRate, "x", React.createElement(Icon, {
-    name: "changespeed"
-  })), showEncodeBtn && React.createElement("div", {
+  }, React.createElement("div", {
+    className: "relative"
+  }, React.createElement(Icon, {
+    name: "changespeed",
+    className: "relative"
+  }), React.createElement("div", {
+    className: "absolute left-0 top-0 text-black"
+  }, playbackRate, "x"))), showEncodeBtn && React.createElement("div", {
     className: "rvt-controller-dropdown rvt-controller-list-wrap"
   }, canDownload ? React.createElement("a", {
     className: "rvt-controller-item",

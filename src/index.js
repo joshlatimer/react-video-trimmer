@@ -162,7 +162,7 @@ class ReactVideoTrimmer extends React.PureComponent {
   handleChangePlaybackRate = () =>
   {
     let current =this.state.playbackRate;
-    current += 1;
+    current += 0.5;
     if (current > 3)
     {
       current = 1;
